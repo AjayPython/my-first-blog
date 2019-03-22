@@ -6,17 +6,13 @@
         <div>
             <h1><a href="/">Django Ajay's Blog</a></h1>
         </div>
-
+{% for post in posts %}
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>This is my first post. Please check that out.</p>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+			<p>Click on below link to directly go to Main Page. ---><a href="https://ajaypython1.pythonanywhere.com/">Ajay Python Anywhere URL Link</a></p> 
         </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>This is my second post. Please check that out too.</p>
-        </div>
+	{% endfor %}
     </body>
 </html>
